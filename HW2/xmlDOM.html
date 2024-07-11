@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>test XML Dom</title>
+</head>
+<body>
+<script event="onload">
+var text = "<customers>" +
+"<customer id='C2890'>" +
+"<name>John Wilkey</name>" +
+"<address>" +
+"<street>89 Mohawk Lane</street>" +
+"<city>Madison</city>" +
+"<state>KY</state>" +
+"</address>" +
+"</customer>" +
+"<customer id='C28902'>" +
+"<name>Billy Mac</name>" +
+"<address>" +
+"<street>2424 School Street</street>" +
+"<city>Banheim</city>" +
+"<state>ME</state>" +
+"</address>" +
+"</customer>" +
+"</customers>"
+
+var parser = new DOMParser()
+var xmlDoc = parser.parseFromString(text, "text/xml")
+alert("Name: "+xmlDoc.getElementsByTagName("customer")[0].childNodes[0].firstChild.nodeValue+"\nState: "+xmlDoc.getElementsByTagName("customer")[0].childNodes[1].childNodes[2].firstChild.nodeValue)
+alert("Name: "+xmlDoc.getElementsByTagName("customer")[1].childNodes[0].firstChild.nodeValue+"\nStreet: "+xmlDoc.getElementsByTagName("customer")[1].childNodes[1].childNodes[0].firstChild.nodeValue+"\nCity: "+xmlDoc.getElementsByTagName("customer")[1].childNodes[1].childNodes[1].firstChild.nodeValue+"\nState: "+xmlDoc.getElementsByTagName("customer")[1].childNodes[1].childNodes[2].firstChild.nodeValue)
+
+</script>
+</body>
+</html>
