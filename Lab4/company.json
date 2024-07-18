@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Sun Star",
+        "employees": 10000,
+        "ceo": "May Jane",
+        "location": {
+            "no": "124",
+            "street": "Robinson",
+            "city": "NY",
+            "zipcode": "85444",
+            "geo": {
+                "lat": 40.7128,
+                "lng": 74.0060
+            }
+        }
+    },
+    {
+        "name": "NTC",
+        "employees": 25000,
+        "ceo": "William Lee",
+        "location": {
+            "no": "256",
+            "street": "Landy",
+            "city": "WA",
+            "zipcode": "65222",
+            "geo": {
+                "lat": 47.7511,
+                "lng": 120.7401
+            }
+        }
+    }
+]
