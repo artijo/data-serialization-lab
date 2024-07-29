@@ -64,6 +64,13 @@ data.then(data => {
   console.log(data);
 });
 
+const fetchdata = async () => {
+  const response = await fetch('company.json');
+  const data = await response.json();
+  return data;
+};
+
+
 //จงเขียนคำสั่งตามโจทย์
 const obj = JSON.parse(jsontxt);
 document.querySelector('.c01').textContent = obj.ceo;

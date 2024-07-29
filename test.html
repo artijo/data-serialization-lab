@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      async function getLocalIPs() {
+    const ips = [];
+    const pc = new RTCPeerConnection({iceServers: []});
+    pc.createDataChannel('');
+    pc.createOffer().then(offer => pc.setLocalDescription(offer));
+    pc.onicecandidate = event => {
+        if (!event || !event.candidate) {
+            pc.close();
+            return;
+        }
+        const ipMatch = /([0-9]{1,3}(\.[0-9]{1,3}){3})/g;
+        const candidate = event.candidate.candidate;
+        const ip = candidate.match(ipMatch);
+        if (ip && !ips.includes(ip[0])) {
+            ips.push(ip[0]);
+        }
+    };
+    await new Promise(resolve => setTimeout(resolve, 1000)); // wait for ICE gathering to complete
+    return ips;
+}
+
+getLocalIPs().then(ips => console.log('Local IPs:', ips));
+
+
+//Get the IP address of the user
+async function getIP() {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    return data.ip;
+}
+getIP().then(ip => console.log('Public IP address:', ip));
+
+//access network interface of the user client side
+async function getNetworkInterfaces() {
+    const networkInterfaces = {};
+    const pc = new RTCPeerConnection({iceServers: []});
+    pc.createDataChannel('');
+    pc.createOffer().then(offer => pc.setLocalDescription(offer));
+    pc.onicecandidate = event => {
+        if (!event || !event.candidate) {
+            pc.close();
+            return;
+        }
+        const candidate = event.candidate.candidate;
+        const ipMatch = /([0-9]{1,3}(\.[0-9]{1,3}){3})/g;
+        const ip = candidate.match(ipMatch);
+        if (ip) {
+            networkInterfaces[ip[0]] = true;
+        }
+    };
+    await new Promise(resolve => setTimeout(resolve, 1000)); // wait for ICE gathering to complete
+    return Object.keys(networkInterfaces);
+}
+getNetworkInterfaces().then(interfaces => console.log('Network interfaces:', interfaces));
+
+    </script>
+</body>
+</html>
