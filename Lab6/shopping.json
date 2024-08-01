@@ -1,0 +1,107 @@
+{
+  "customer": [
+    {
+      "custID": "c101",
+      "custName": "Smith Loy",
+      "email": "smith@gmail.com",
+      "orders": [
+        {
+          "orderID": "ord01",
+          "orderDate": "15-07-2566",
+          "orderdetails": [
+            {
+              "orderdetailID": "od001",
+              "prodID": "p01",
+              "price" : 1000,
+              "quantity": 1
+            },
+            {
+              "orderdetailID": "od002",
+              "prodID": "p02",
+                "price" : 700,
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "orderID": "ord03",
+          "orderDate": "21-07-2566",
+          "orderdetails": [
+            {
+              "orderdetailID": "od004",
+              "prodID": "p03",
+              "price" : 20,
+              "quantity": 2
+            },
+            {
+              "orderdetailID": "od005",
+              "prodID": "p04",
+                "price" : 15,
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "custID": "c102",
+      "custName": "Mary Jane",
+      "email": "mar@hotmail.com",
+      "orders": [
+        {
+          "orderID": "ord02",
+          "orderDate": "20-07-2566",
+          "orderdetails": [
+            {
+              "orderdetailID": "od003",
+              "prodID": "p02",
+              "price" : 700,
+              "quantity": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "custID": "c103",
+      "custName": "Wiily Mac",
+      "email": "will@gmail.com",
+      "orders": [
+        {
+          "orderID": "ord04",
+          "orderDate": "22-07-2566",
+          "orderdetails": [
+            {
+              "orderdetailID": "od006",
+              "prodID": "p01",
+                "price" : 1000,
+              "quantity": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "product": [
+    {
+      "prodID": "p01",
+      "prodName": "Laptop",
+      "price": 1000
+    },
+    {
+      "prodID": "p02",
+      "prodName": "SmartPhone",
+      "price": 700
+    },
+    {
+      "prodID": "p03",
+      "prodName": "Mouse",
+      "price": 20
+    },
+    {
+      "prodID": "p04",
+      "prodName": "USB",
+      "price": 15
+    }
+  ]
+}
