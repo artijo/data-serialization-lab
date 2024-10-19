@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' />
+    <style>
+        ul li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 d-flex align-items-center justify-content-between">
+        <div class="d-flex gap-4 align-items-center">
+            <h1><%= port[0].name %></h1>
+            <h3 class="fs-2 text-success">Student Portfolio</h3>
+        </div>
+        <nav>
+            <ul class="d-flex align-items-center gap-4">
+                <li><a href="/">Home</a></li>
+                <li><a href="/student">Student List</a></li>
+                <li><a href="/student/portfolio">My Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>I am a passionate and dedicated
+            Computing and Digital Technologies student currently pursuing my bachelor's
+            degree at Khon Kaen University. I have a strong interest in web development
+            and programming.</p>
+        <h2>Contact Me</h2>
+        <p>You can reach me at <a href="mailto:<%= port[0].contact.email %>"><%= port[0].contact.email %></a>. Feel free to connect with me on <a
+            href="<%= port[0].contact.linkedin %>">LinkedIn</a> as well.</p>
+    </div>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

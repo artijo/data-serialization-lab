@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Student List - Computing and Digital Texhnologies Major</h1>
+    <table border="1">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Year of Study</th>
+            <th>Email</th>
+            <th>Manage</th>
+        </tr>
+        <!-- foreach students -->
+        <% students.forEach((student) => { %>
+            <tr>
+                <td><%= student.studentID %></td>
+                <td><%= student.Name %></td>
+            <% if(student.Yearofstudy == 1) { %>
+                <td><%= student.Yearofstudy %>st Year</td>
+            <% } else if(student.Yearofstudy == 2) { %>
+                <td><%= student.Yearofstudy %>nd Year</td>
+            <% } else if(student.Yearofstudy == 3) { %>
+                <td><%= student.Yearofstudy %>rd Year</td>
+            <% } else { %>
+                <td><%= student.Yearofstudy %>th Year</td>
+            <% } %>
+                <td><%= student.Email %></td>
+                <td>
+                    <a href="/student/editForm/<%= student._id %>">Edit</a>
+                    <a href="/student/delete/<%= student._id %>">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

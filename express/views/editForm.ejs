@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student Formt</title>
+</head>
+<body>
+    <h2>Edit Form</h2>
+    <form action="/student/update" method="post">
+        <label for="ID">ID:</label><br>
+        <input type="text" id="ID" name="_id" value="<%= student._id %>" readonly><br>
+        <label for="studentID">Student ID:</label><br>
+        <input type="text" id="studentID" name="studentID" value="<%= student.studentID %>"><br>
+        <label for="Name">Name:</label><br>
+        <input type="text" id="Name" name="Name" value="<%= student.Name %>"><br>
+        <label for="Yearofstudy">Year of Study:</label><br>
+        <select id="Yearofstudy" name="Yearofstudy">
+        <option value="1" <% if(student.Yearofstudy == 1) { %> selected <% } %>>1st Year</option>
+        <option value="2" <% if(student.Yearofstudy == 2) { %> selected <% } %>>2nd Year</option>
+        <option value="3" <% if(student.Yearofstudy == 3) { %> selected <% } %>>3rd Year</option>
+        <option value="4" <% if(student.Yearofstudy == 4) { %> selected <% } %>>4th Year</option>
+        </select><br>
+        <label for="Email">Email:</label><br>
+        <input type="text" id="Email" name="Email" value="<%= student.Email %>"><br><br>
+        <input type="submit" value="Update Student">
+    </form>
+</body>
+</html>

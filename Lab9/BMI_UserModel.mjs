@@ -7,4 +7,4 @@ function calculateBMI(w, h){
     return { BMI, txt };
 }
 
-module.exports = {calculateBMI};
+export {calculateBMI};
